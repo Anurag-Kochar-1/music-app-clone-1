@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import BottomMusicPlayer from './components/MusicPlayer/BottomMusicPlayer';
+import { useSelector } from 'react-redux';
+import SideBar from './components/SideBar';
+import TopBar from './components/TopBar';
+import HomePage from './pages/HomePage';
+import MusicPlayer from './components/MusicPlayer';
+import {PlayerReducer} from './Redux/features/PlayerSlice';
 
 function App() {
+
+  const { activeSong } = useSelector((state) => state.player);
+  // bg-[#121212]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="w-full min-h-screen flex flex-col  bg-[#121212]">
+      
+      <TopBar />
+
+
+     <div className='w-full min-h-full flex flex-row items-start '>
+        <SideBar />
+        <HomePage />
+     </div>
+
+     {/* <BottomMusicPlayer/> */}
+     { <MusicPlayer />}
+
     </div>
   );
 }
