@@ -13,7 +13,7 @@ const MusicPlayer = () => {
   const [duration, setDuration] = useState(0);
   const [seekTime, setSeekTime] = useState(0);
   const [appTime, setAppTime] = useState(0);
-  const [volume, setVolume] = useState(0.3);
+  const [volume, setVolume] = useState(0.1);
   const [repeat, setRepeat] = useState(false);
   const [shuffle, setShuffle] = useState(false);
   const dispatch = useDispatch();
@@ -53,7 +53,7 @@ const MusicPlayer = () => {
   };
 
   return (
-    <div className="bg-black sm:px-12 px-8 w-full flex items-center justify-between sticky bottom-0">
+    <div className="bg-black sm:px-12 py-3 px-8 w-full flex items-center justify-between sticky bottom-0">
       <Track isPlaying={isPlaying} isActive={isActive} activeSong={activeSong} />
       <div className="flex-1 flex flex-col items-center justify-center">
         <Controls
