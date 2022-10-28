@@ -37,7 +37,7 @@ function HomePage() {
 
     {/* --------- Second Section - Top songs ---------*/}
     <div className='flex flex-row justify-center flex-wrap'>
-      {data && data.slice(0,12).map((song , index) => {
+      {data && data.map((song , index) => {
           return (
               <SongCard 
               key={song.key}
